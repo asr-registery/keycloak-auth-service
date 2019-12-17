@@ -3,15 +3,12 @@
  */
 package af.asr.keycloakauthservice.exception.keycloak;
 
-import io.mosip.kernel.core.exception.ServiceError;
+import af.asr.keycloakauthservice.exception.common.ServiceError;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Ramadurai Pandian
- *
- */
+
 public class AuthManagerServiceException extends RuntimeException {
 	/**
 	 * 

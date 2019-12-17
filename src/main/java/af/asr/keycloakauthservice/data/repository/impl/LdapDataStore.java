@@ -2,12 +2,16 @@
 package af.asr.keycloakauthservice.data.repository.impl;
 
 
+import af.asr.keycloakauthservice.config.MosipEnvironment;
 import af.asr.keycloakauthservice.data.dto.*;
 import af.asr.keycloakauthservice.data.dto.otp.OtpUser;
 import af.asr.keycloakauthservice.data.repository.DataStore;
 import af.asr.keycloakauthservice.exception.keycloak.AuthManagerException;
 import af.asr.keycloakauthservice.util.TokenGenerator;
 import af.asr.keycloakauthservice.util.TokenValidator;
+import af.asr.keycloakauthservice.util.common.CryptoUtil;
+import af.asr.keycloakauthservice.util.common.HMACUtils;
+import af.asr.keycloakauthservice.util.constant.AuthConstant;
 import af.asr.keycloakauthservice.util.constant.AuthErrorCode;
 import af.asr.keycloakauthservice.util.constant.LDAPErrorCode;
 import af.asr.keycloakauthservice.util.constant.LdapConstants;
@@ -608,7 +612,7 @@ public class LdapDataStore implements DataStore {
 	 * 
 	 * @param oldPassword
 	 * @param hashedPassword
-	 * @param userId
+	 * @param
 	 * @return
 	 * @throws Exception
 	 */

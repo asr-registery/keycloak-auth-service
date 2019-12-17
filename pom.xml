@@ -20,11 +20,11 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>af.asr</groupId>
-			<artifactId>keycloak-auth-service</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>af.asr</groupId>-->
+<!--			<artifactId>auth-adapter</artifactId>-->
+<!--			<version>${project.version}</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>af.asr</groupId>

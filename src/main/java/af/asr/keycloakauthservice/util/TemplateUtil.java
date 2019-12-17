@@ -1,12 +1,13 @@
 
 package af.asr.keycloakauthservice.util;
 
+import af.asr.authadapter.exception.AuthNException;
+import af.asr.authadapter.exception.AuthZException;
+import af.asr.keycloakauthservice.config.MosipEnvironment;
 import af.asr.keycloakauthservice.data.dto.otp.OtpTemplateDto;
 import af.asr.keycloakauthservice.data.dto.otp.OtpTemplateResponseDto;
 import af.asr.keycloakauthservice.data.dto.otp.OtpUser;
 import af.asr.keycloakauthservice.data.dto.otp.email.OTPEmailTemplate;
-import af.asr.keycloakauthservice.exception.AuthNException;
-import af.asr.keycloakauthservice.exception.AuthZException;
 import af.asr.keycloakauthservice.exception.common.ExceptionUtils;
 import af.asr.keycloakauthservice.exception.common.ServiceError;
 import af.asr.keycloakauthservice.exception.keycloak.AuthManagerException;
@@ -233,14 +234,14 @@ public class TemplateUtil {
 
 			if (ex.getRawStatusCode() == 401) {
 				if (!validationErrorsList.isEmpty()) {
-					throw new AuthNException(validationErrorsList);
+//					throw new AuthNException(validationErrorsList);
 				} else {
 					throw new BadCredentialsException("Authentication failed from Internal token services");
 				}
 			}
 			if (ex.getRawStatusCode() == 403) {
 				if (!validationErrorsList.isEmpty()) {
-					throw new AuthZException(validationErrorsList);
+//					throw new AuthZException(validationErrorsList);
 				} else {
 					throw new AccessDeniedException("Access denied from Internal token services");
 				}
