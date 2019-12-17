@@ -1,5 +1,6 @@
 package af.asr.keycloakauthservice.data.dto.otp.idrepo;
 
+import af.asr.keycloakauthservice.http.ResponseWrapper;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
