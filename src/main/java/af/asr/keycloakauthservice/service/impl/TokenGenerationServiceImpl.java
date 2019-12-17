@@ -3,18 +3,15 @@
  */
 package af.asr.keycloakauthservice.service.impl;
 
-import io.mosip.kernel.auth.dto.AuthNResponseDto;
-import io.mosip.kernel.auth.dto.ClientSecret;
-import io.mosip.kernel.auth.service.AuthService;
-import io.mosip.kernel.auth.service.TokenGenerationService;
+
+import af.asr.keycloakauthservice.data.dto.AuthNResponseDto;
+import af.asr.keycloakauthservice.data.dto.ClientSecret;
+import af.asr.keycloakauthservice.service.AuthService;
+import af.asr.keycloakauthservice.service.TokenGenerationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-/**
- * @author Ramadurai Pandian
- *
- */
 @Component
 public class TokenGenerationServiceImpl implements TokenGenerationService {
 	

@@ -1,29 +1,29 @@
 package af.asr.keycloakauthservice.service.impl;
 
+import af.asr.keycloakauthservice.config.MosipEnvironment;
+import af.asr.keycloakauthservice.data.dto.AuthNResponseDto;
+import af.asr.keycloakauthservice.data.dto.BasicTokenDto;
+import af.asr.keycloakauthservice.data.dto.MosipUserDto;
+import af.asr.keycloakauthservice.data.dto.MosipUserTokenDto;
+import af.asr.keycloakauthservice.data.dto.otp.*;
+import af.asr.keycloakauthservice.data.dto.otp.email.OTPEmailTemplate;
+import af.asr.keycloakauthservice.exception.adapter.AuthManagerException;
+import af.asr.keycloakauthservice.exception.adapter.AuthNException;
+import af.asr.keycloakauthservice.exception.adapter.AuthZException;
+import af.asr.keycloakauthservice.exception.common.ExceptionUtils;
+import af.asr.keycloakauthservice.exception.common.ServiceError;
+import af.asr.keycloakauthservice.exception.keycloak.AuthManagerServiceException;
+import af.asr.keycloakauthservice.http.RequestWrapper;
+import af.asr.keycloakauthservice.http.ResponseWrapper;
+import af.asr.keycloakauthservice.service.OTPGenerateService;
+import af.asr.keycloakauthservice.service.OTPService;
+import af.asr.keycloakauthservice.service.TokenGenerationService;
+import af.asr.keycloakauthservice.util.OtpValidator;
+import af.asr.keycloakauthservice.util.TemplateUtil;
+import af.asr.keycloakauthservice.util.TokenGenerator;
+import af.asr.keycloakauthservice.util.constant.AuthConstant;
+import af.asr.keycloakauthservice.util.constant.AuthErrorCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.mosip.kernel.auth.adapter.exception.AuthNException;
-import io.mosip.kernel.auth.adapter.exception.AuthZException;
-import io.mosip.kernel.auth.config.MosipEnvironment;
-import io.mosip.kernel.auth.constant.AuthConstant;
-import io.mosip.kernel.auth.constant.AuthErrorCode;
-import io.mosip.kernel.auth.dto.AuthNResponseDto;
-import io.mosip.kernel.auth.dto.BasicTokenDto;
-import io.mosip.kernel.auth.dto.MosipUserDto;
-import io.mosip.kernel.auth.dto.MosipUserTokenDto;
-import io.mosip.kernel.auth.dto.otp.*;
-import io.mosip.kernel.auth.dto.otp.email.OTPEmailTemplate;
-import io.mosip.kernel.auth.exception.AuthManagerException;
-import io.mosip.kernel.auth.exception.AuthManagerServiceException;
-import io.mosip.kernel.auth.service.OTPGenerateService;
-import io.mosip.kernel.auth.service.OTPService;
-import io.mosip.kernel.auth.service.TokenGenerationService;
-import io.mosip.kernel.auth.util.OtpValidator;
-import io.mosip.kernel.auth.util.TemplateUtil;
-import io.mosip.kernel.auth.util.TokenGenerator;
-import io.mosip.kernel.core.exception.ExceptionUtils;
-import io.mosip.kernel.core.exception.ServiceError;
-import io.mosip.kernel.core.http.RequestWrapper;
-import io.mosip.kernel.core.http.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
@@ -39,10 +39,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author Ramadurai Pandian
- *
- */
+
 @Component
 public class OTPServiceImpl implements OTPService {
 
@@ -235,7 +232,7 @@ public class OTPServiceImpl implements OTPService {
 		headers.set(AuthConstant.COOKIE, AuthConstant.AUTH_HEADER + token);
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
 		map.add("mailTo", email);
-		map.add("mailSubject", "MOSIP Notification");
+		map.add("mailSubject", "OTP Notification");
 		map.add("mailContent", message);
 		HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 		try {

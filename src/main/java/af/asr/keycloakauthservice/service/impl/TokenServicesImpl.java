@@ -3,11 +3,11 @@
  */
 package af.asr.keycloakauthservice.service.impl;
 
-import io.mosip.kernel.auth.constant.AuthErrorCode;
-import io.mosip.kernel.auth.dto.AuthToken;
-import io.mosip.kernel.auth.dto.TimeToken;
-import io.mosip.kernel.auth.exception.AuthManagerException;
-import io.mosip.kernel.auth.service.TokenService;
+import af.asr.keycloakauthservice.data.dto.AuthToken;
+import af.asr.keycloakauthservice.data.dto.TimeToken;
+import af.asr.keycloakauthservice.exception.adapter.AuthManagerException;
+import af.asr.keycloakauthservice.service.TokenService;
+import af.asr.keycloakauthservice.util.constant.AuthErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -23,9 +23,6 @@ import java.util.Date;
 
 /**
  * Class used for storing token
- * 
- * @author Ramadurai Pandian
- *
  */
 @Repository
 public class TokenServicesImpl implements TokenService {
