@@ -1,6 +1,7 @@
 package af.asr.keycloakauthservice.exception.keycloak;
 
-import io.mosip.kernel.core.exception.BaseUncheckedException;
+
+import af.asr.keycloakauthservice.exception.common.BaseUncheckedException;
 
 public class PasswordMismatchException extends BaseUncheckedException {
 

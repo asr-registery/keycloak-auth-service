@@ -1,9 +1,12 @@
-/**
- * 
- */
+
 package af.asr.keycloakauthservice.exception.keycloak;
 
+import af.asr.keycloakauthservice.exception.common.ExceptionUtils;
 import af.asr.keycloakauthservice.exception.common.ServiceError;
+import af.asr.keycloakauthservice.http.ResponseWrapper;
+import af.asr.keycloakauthservice.util.EmptyCheckUtils;
+import af.asr.keycloakauthservice.util.constant.AuthConstant;
+import af.asr.keycloakauthservice.util.constant.AuthErrorCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -20,6 +23,7 @@ import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -84,7 +88,7 @@ public class AuthManagerExceptionHandler {
 	public ResponseEntity<ResponseWrapper<ServiceError>> customErrorMessageList(HttpServletRequest request,
                                                                                 AuthManagerServiceException e) throws IOException {
 		ResponseWrapper<ServiceError> responseWrapper = setErrors(request);
-		responseWrapper.getErrors().addAll(e.getList());
+		responseWrapper.getErrors().addAll((Collection<? extends ServiceError>) e.getList());
 		ExceptionUtils.logRootCause(e);
 		return new ResponseEntity<>(responseWrapper, HttpStatus.OK);
 	}
