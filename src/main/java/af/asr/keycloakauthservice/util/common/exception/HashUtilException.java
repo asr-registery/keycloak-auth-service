@@ -1,13 +1,11 @@
 package af.asr.keycloakauthservice.util.common.exception;
 
-import io.mosip.kernel.core.exception.BaseCheckedException;
+
+import af.asr.keycloakauthservice.exception.common.BaseCheckedException;
 
 /**
  * HashUtilException class wraps the Java BaseCheckedException class to provide
  * checkedexception code for HashUtil
- * 
- * @version 1.0 14 August 2018
- * @author Jyoti Prakash Nayak
  */
 public class HashUtilException extends BaseCheckedException {
 	/** Serializable version Id. */

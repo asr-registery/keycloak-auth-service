@@ -1,8 +1,6 @@
 
 package af.asr.keycloakauthservice.util;
 
-import af.asr.authadapter.exception.AuthNException;
-import af.asr.authadapter.exception.AuthZException;
 import af.asr.keycloakauthservice.config.MosipEnvironment;
 import af.asr.keycloakauthservice.data.dto.otp.OtpTemplateDto;
 import af.asr.keycloakauthservice.data.dto.otp.OtpTemplateResponseDto;

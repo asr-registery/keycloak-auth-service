@@ -1,7 +1,7 @@
 package af.asr.keycloakauthservice.exception.dataaccess;
 
 
-import af.asr.auditmanager.exception.common.BaseUncheckedException;
+import af.asr.keycloakauthservice.exception.common.BaseUncheckedException;
 
 /**
  * Custom class for DataAccessLayerException

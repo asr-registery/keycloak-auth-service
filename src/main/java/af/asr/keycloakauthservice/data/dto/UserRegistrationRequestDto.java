@@ -1,7 +1,7 @@
 package af.asr.keycloakauthservice.data.dto;
 
+import af.asr.keycloakauthservice.util.constant.AuthConstant;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.mosip.kernel.auth.constant.AuthConstant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRegistrationRequestDto {
-	@NotBlank(message=AuthConstant.INVALID_REQUEST)
+	@NotBlank(message= AuthConstant.INVALID_REQUEST)
 	private String userName;
 	@NotBlank(message=AuthConstant.INVALID_REQUEST)
 	private String firstName;

@@ -1,12 +1,7 @@
 package af.asr.keycloakauthservice.util.common.exception;
 
-import io.mosip.kernel.core.exception.BaseCheckedException;
+import af.asr.keycloakauthservice.exception.common.BaseCheckedException;
 
-/**
- * @author Sidhant Agarwal
- * @since 1.0.0
- *
- */
 public class JsonGenerationException extends BaseCheckedException {
 	private static final long serialVersionUID = 7464354823823756787L;
 

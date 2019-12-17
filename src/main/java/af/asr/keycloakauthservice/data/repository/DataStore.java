@@ -1,14 +1,13 @@
-/**
- * 
- */
+
 package af.asr.keycloakauthservice.data.repository;
 
 import af.asr.keycloakauthservice.data.dto.*;
 import af.asr.keycloakauthservice.data.dto.otp.OtpUser;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
+//@Component
 public interface DataStore  {
 
 	public RolesListDto getAllRoles();

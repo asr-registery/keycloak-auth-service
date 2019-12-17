@@ -1,12 +1,10 @@
 package af.asr.keycloakauthservice.util.common.exception;
 
-import io.mosip.kernel.core.exception.BaseUncheckedException;
+
+import af.asr.keycloakauthservice.exception.common.BaseUncheckedException;
 
 /**
  * Exception to be thrown when a number is not finite.
- * 
- * @author Ritesh Sinha
- * @since 1.0.0
  */
 public class NotFiniteNumberException extends BaseUncheckedException {
 

@@ -1,13 +1,8 @@
 package af.asr.keycloakauthservice.util.common.exception;
 
-import io.mosip.kernel.core.exception.BaseUncheckedException;
 
-/**
- * Exception to be thrown when a number is not a number.
- * 
- * @author Ritesh Sinha
- * @since 1.0.0
- */
+import af.asr.keycloakauthservice.exception.common.BaseUncheckedException;
+
 public class NotANumberException extends BaseUncheckedException {
 
 	/** Serializable version Id. */

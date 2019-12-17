@@ -4,7 +4,7 @@ package af.asr.keycloakauthservice.exception.keycloak;
 import af.asr.keycloakauthservice.exception.common.ExceptionUtils;
 import af.asr.keycloakauthservice.exception.common.ServiceError;
 import af.asr.keycloakauthservice.http.ResponseWrapper;
-import af.asr.keycloakauthservice.util.EmptyCheckUtils;
+import af.asr.keycloakauthservice.util.common.EmptyCheckUtils;
 import af.asr.keycloakauthservice.util.constant.AuthConstant;
 import af.asr.keycloakauthservice.util.constant.AuthErrorCode;
 import com.fasterxml.jackson.databind.JsonNode;
